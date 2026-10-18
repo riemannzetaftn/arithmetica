@@ -1,10 +1,22 @@
 window.MathJax = {
+  window.MathJax = {
   tex: {
     inlineMath: [["\\(", "\\)"]],
     displayMath: [["\\[", "\\]"]],
     processEscapes: true,
-    processEnvironments: true
+    processEnvironments: true,
+    tags: "ams",
+    macros: {
+      sf: ["\\mathsf{#1}", 1],
+      rm: ["\\mathrm{#1}", 1],
+      bb: ["\\mathbb{#1}", 1],
+      ca: ["\\mathcal{#1}", 1],
+      Hom: "\\operatorname{Hom}",
+      Ob: "\\operatorname{Ob}",
+    },
   },
+  // ... 나머지는 그대로
+};
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex"
