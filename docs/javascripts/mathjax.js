@@ -15,7 +15,6 @@ window.MathJax = {
       Ob: "\\operatorname{Ob}",
     },
   },
-  // ... 나머지는 그대로
 };
   options: {
     ignoreHtmlClass: ".*|",
