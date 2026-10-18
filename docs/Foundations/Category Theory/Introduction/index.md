@@ -1,6 +1,6 @@
 ---
 title: Introduction
-weight = -1
+weight: -1
 ---
 
 In modern mathematics, we are rarely concerned with a single number or a single mathematical object. Rather, we are concerned with the 'structure' or 'system' of such mathematical objects. For instance, we consider the set of natural numbers, integers, rational numbers, real numbers, and complex numbers, with the operations (addition, subtraction, multiplication, division, exponentiation, etc.) of these numbers. Furthermore, we extract common features of these structures, thereby obtaining much general frameworks. For instance, by generalizing the structure of addition and multiplication we have rings (for instance, Gaussian integers form a ring $\mathbb{Z}[i]$), and requiring division gives structure of fields. Thus we gain more clear picture of what's happening beyond our classical objects such as integers or rational numbers.
