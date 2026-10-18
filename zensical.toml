@@ -15,6 +15,7 @@ features = [
   "navigation.top",
 ]
 
+[project.markdown_extensions.attr_list]
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.footnotes]
 [project.markdown_extensions.toc]
