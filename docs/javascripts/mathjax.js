@@ -11,8 +11,8 @@ window.MathJax = {
       rm: ["\\mathrm{#1}", 1],
       bb: ["\\mathbb{#1}", 1],
       ca: ["\\mathcal{#1}", 1],
-      Hom: "\\operatorname{Hom}",
-      Ob: "\\operatorname{Ob}",
+      Hom: "\\mathrm{Hom}",
+      Ob: "\\mathrm{Ob}",
     },
   },
 };
