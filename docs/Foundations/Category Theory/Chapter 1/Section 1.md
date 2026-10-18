@@ -16,5 +16,5 @@ In this section we define categories.
 
     - The sets \(\Hom_\sfC(A,B)\) are disjoint for distinct pairs \((A,B)\).
     - For each object \(A\), there exist a morphism \(\id_A:A\to A\), called the *identity* of \(A\), such that for every \(B\in\Ob(\sfC)\), \(\phi:A\to B\) and \(\psi:B\to A\), \(\phi = \phi\circ\id_A\) and \(\psi = \id_A\circ\psi\).
-    - For each quadruple \((A,B,C,D)\) of objects, and triple \((phi:C\to D,\psi:B\to C,\varphi:A\to B)\) of morphisms, we have *associativity* \(\phi\circ(\psi\circ\varphi) = (\phi\circ\psi)\circ\varphi\).
+    - For each quadruple \((A,B,C,D)\) of objects, and triple \((\phi:C\to D,\psi:B\to C,\varphi:A\to B)\) of morphisms, we have *associativity* \(\phi\circ(\psi\circ\varphi) = (\phi\circ\psi)\circ\varphi\).
     { #def-category }
