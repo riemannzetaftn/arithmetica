@@ -2,9 +2,9 @@
 title: Introduction
 ---
 
-# Arithmetica: A Blog Dedicated to Number Theory
+# Bibliotheca Arithmeticae: A Blog Dedicated to Number Theory
 
-Welcome to *Arithmetica*.
+Welcome to *Bibliotheca Arithmeticae*.
 
 ## About the Author
 
