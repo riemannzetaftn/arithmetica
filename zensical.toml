@@ -1,0 +1,24 @@
+[project]
+site_name = "Arithmetica"
+site_url = "https://riemannzetaftn.github.io/arithmetica/"
+extra_javascript = [
+  "javascripts/mathjax.js",
+  "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+]
+
+[project.theme]
+language = "en"
+features = [
+  "navigation.indexes",
+  "navigation.path",
+  "navigation.top",
+]
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.toc]
+permalink = true
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
