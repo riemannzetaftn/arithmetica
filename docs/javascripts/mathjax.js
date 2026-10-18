@@ -1,5 +1,4 @@
 window.MathJax = {
-  window.MathJax = {
   tex: {
     inlineMath: [["\\(", "\\)"]],
     displayMath: [["\\[", "\\]"]],
@@ -15,7 +14,6 @@ window.MathJax = {
       Ob: "\\mathrm{Ob}"
     },
   },
-};
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex"
