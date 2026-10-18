@@ -1,6 +1,6 @@
 ---
 title: Introduction
-weight: -1
+weight: 1
 ---
 
 A large part of modern mathematics comes from abstraction and generalization of existing concepts and phenomena. If we encounter an interesting phenomena, we usually extract the essence out of it, and generalize the principle. Modern algebra (especially the basic theory of groups, rings, modules or vector spaces) is one typical example: we generalize arithmetic of the integers, rational, real or complex numbers to abstract algebraic structures, and sometimes this rich theory furnish useful insights to the original number systems. The topology or geometry is another example: the figures in two or three dimensions generalizes to topological spaces or to manifolds.
