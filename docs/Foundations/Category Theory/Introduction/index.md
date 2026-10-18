@@ -1,0 +1,8 @@
+---
+title: Introduction
+weight = -1
+---
+
+In modern mathematics, we are rarely concerned with a single number or a single mathematical object. Rather, we are concerned with the 'structure' or 'system' of such mathematical objects. For instance, we consider the set of natural numbers, integers, rational numbers, real numbers, and complex numbers, with the operations (addition, subtraction, multiplication, division, exponentiation, etc.) of these numbers. Furthermore, we extract common features of these structures, thereby obtaining much general frameworks. For instance, by generalizing the structure of addition and multiplication we have rings (for instance, Gaussian integers form a ring $\mathbb{Z}[i]$), and requiring division gives structure of fields. Thus we gain more clear picture of what's happening beyond our classical objects such as integers or rational numbers.
+
+The 'Category Theory' does this one step further: we shall generalize the concept of 'mathematical structures'. The structure of sets, groups, rings, fields, vector spaces, topological spaces, and many others fall into one concept of a 'category', where there are objects (such as sets, groups, rings, fields, vector spaces, topological spaces, etc.) and arrows (such as functions, group homomorphisms, ring homomorphisms, field homomorphisms, linear maps, continuous functions, etc.). By doing so, we can connect seemingly irrelevant areas of mathematics: for instance, a functor is a kind of arrow between categories.
