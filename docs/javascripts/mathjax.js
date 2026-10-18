@@ -162,6 +162,7 @@ window.MathJax = {
       bfx: "\\mathbf{x}",
       bfy: "\\mathbf{y}",
       bfz: "\\mathbf{z}",
+      id: "{\rm id}"
       Hom: "{\\rm Hom}",
       Ob: "{\\rm Ob}",
       Mor: "{\\rm Mor}",
