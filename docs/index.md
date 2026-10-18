@@ -1,3 +1,7 @@
+---
+title: Introduction
+---
+
 # Arithmetica: A Blog Dedicated to Number Theory
 
 Welcome to *Arithmetica*.
