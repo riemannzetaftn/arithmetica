@@ -29,15 +29,23 @@ In this section we define categories.
 We observe the followings.
 
 - From the first assumption, the domain and codomain of any morphism is uniquely determined. Therefore, we speak of 'the' domain and 'the' codomain from now on. Two morphisms \(\phi,\psi\) are said to be *composable* if the domain of \(\phi\) equals the codomain of \(\psi\), so that \(\phi\circ\psi\) is defined.
-- If a morphism \(\phi:A\to B\) in \(\sfC\) has inverses \(\psi,\varphi\), then we have \[\psi = \psi\circ\id_B = \psi\circ(\phi\circ\varphi) = (\psi\circ\phi)\circ\varphi = \id_A\circ\varphi = \varphi.\] That is, inverse of a morphism is unique provided that it exists, and we shall speak of 'the' inverse. The inverse of \(\phi\), if exists, is also denoted by \(\phi^{-1}\).
+- If a morphism \(\phi:A\to B\) in \(\sfC\) has inverses \(\psi,\varphi\), then we have
+    
+    \[\psi = \psi\circ\id_B = \psi\circ(\phi\circ\varphi) = (\psi\circ\phi)\circ\varphi = \id_A\circ\varphi = \varphi.\]
+    
+    That is, inverse of a morphism is unique provided that it exists, and we shall speak of 'the' inverse. The inverse of \(\phi\), if exists, is also denoted by \(\phi^{-1}\).
 - The relation of being isomorphic is
 
     - Reflexive, since for any object \(A\), \(\id_A:A\to A\) satisfies \(\id_A\circ\id_A = \id_A\), so that it is the inverse of itself, and is an isomorphism.
     - Symmetric, since for an isomorphism \(\phi:A\to B\), its inverse \(\psi:B\to A\) is also an isomorphism as \(\phi\) is its inverse by definition.
-    - Transitive, since for isomorphisms \(\phi:A\to B\) and \(\psi:B\to C\), \(\psi\circ\phi:A\to C\) is an isomorphism with the inverse \(\phi^{-1}\circ\psi^{-1}\): \begin{align}
-        (\phi^{-1}\circ\psi^{-1})\circ(\psi\circ\phi) &= \phi^{-1}\circ(\psi^{-1}\circ(\psi\circ\phi))\\
-        &= \phi^{-1}\circ((\psi^{-1}\circ\psi)\circ\phi)\\
-        &= \phi^{-1}\circ(\id_B\circ\phi)\\
-        &= \phi^{-1}\circ\phi\\
-        &= \id_A
-    \end{align} and similarly \((\psi\circ\phi)\circ(\phi^{-1}\circ\psi^{-1}) = \id_C\).
+    - Transitive, since for isomorphisms \(\phi:A\to B\) and \(\psi:B\to C\), \(\psi\circ\phi:A\to C\) is an isomorphism with the inverse \(\phi^{-1}\circ\psi^{-1}\):
+        
+        \begin{align}
+            (\phi^{-1}\circ\psi^{-1})\circ(\psi\circ\phi) &= \phi^{-1}\circ(\psi^{-1}\circ(\psi\circ\phi))\\
+            &= \phi^{-1}\circ((\psi^{-1}\circ\psi)\circ\phi)\\
+            &= \phi^{-1}\circ(\id_B\circ\phi)\\
+            &= \phi^{-1}\circ\phi\\
+            &= \id_A
+        \end{align}
+        
+        and similarly \((\psi\circ\phi)\circ(\phi^{-1}\circ\psi^{-1}) = \id_C\).
