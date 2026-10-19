@@ -109,6 +109,16 @@ We now introduce the most typical examples of categories, from various fields of
         - Banach (resp. B*-, C*-) algebras with Banach (resp. B*-, C*-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
 
+Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures. But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
+
+!!! example "More Categories"
+
+    1. The empty category, which we denote by \(\mathsf{0}\), is a category with no object or morphisms. There is nothing to verify.
+    2. The category \(\mathsf{1}\) is a category with unique object \(\ast\), and unique morphism, \(\id_\ast\). The symbols \(\ast\) and \(\id_\ast\) are just names; they can be any set. For instance, one may take \(\ast = \bbR\) and \(\id_\ast = 4+i\), as long as we define the composition in the same way.
+    3. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}) if \(a = b\). This is called a *discrete category* with underlying set \(S\).
+    4. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. One can easily verity that any category with unique object leads to a monoid. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
+    5. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). In particular, this includes posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, \(\bbN\) with divisibility order, and the poset \(\Op(X)\) of open sets of \(X\) with inclusion being the morphisms.
+
 !!! remark "Grothendieck Universe"
 
     Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. In practice, we shall build categories over those categories, and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
