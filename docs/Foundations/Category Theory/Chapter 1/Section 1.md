@@ -85,3 +85,10 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\CMfd\): complex manifolds and holomorphic maps.
         - \(\Var_k): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
         - \(\Sch\): schemes and morphisms of schemes.
+    
+    5. There are structures where algebraic and geometric (or analytic) structures are intertwined, and they form categories.
+
+        - \(\TGrp\): topological groups and continuous group homomorphisms.
+        - \(\TRing\): topological rings and continuous ring homomorphisms.
+        - For each topological field \(k\), the category \(\TVec_k) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
+        - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
