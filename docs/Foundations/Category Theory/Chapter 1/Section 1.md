@@ -109,7 +109,7 @@ We now introduce the most typical examples of categories, from various fields of
         - Banach (resp. B*-, C*-) algebras with Banach (resp. B*-, C*-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
 
-!!! remark (Grothendieck Universe)
+!!! remark "Grothendieck Universe"
 
     Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. In practice, we shall build categories over those categories, and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
 
