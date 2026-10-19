@@ -60,7 +60,8 @@ We now introduce the most typical examples of categories, from various fields of
 
     1. The category \(\Set\) has sets as its objects, and functions between those sets as morphisms between the objects. The conditions are verified in set theory. A function is an isomorphism if and only if it is a bijection, and two sets are isomorphic if and only if they have the same cardinality. The automorphisms of a set \(A\) are also called the 'permutations' of \(A\), and \(\Aut_\Set(A)\) is often denoted by \(\Sym(A)\).
     2. The category \(\Set_\ast\) consists of 'pointed sets' (i.e. a pair \((A,a)\) of a set \(A\) and its element \(a\)) and 'pointed maps' between them (i.e. a pointed map from \((A,a)\) to \((B,b)\) is a function \(f:A\to B\) with \(f(a) = b\)).
-    3. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
+    3. Partially ordered sets and order-preserving maps between them form a category, whose isomorphisms are order-isomorphisms (i.e. a bijective order-preserving maps).
+    4. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
 
         - \(\Mnd\): monoids and monoid homomorphisms.
         - \(\Grp\): groups and group homomorphisms.
@@ -74,7 +75,7 @@ We now introduce the most typical examples of categories, from various fields of
         - For each commutative ring \(R\), the category \(\CAlg_R\) consists of commutative \(R\)-algebras (i.e. an \(R\)-algebra \(\varphi:R\to S\) with \(S\) being a commutative ring) and \(R\)-algebra homomorphisms between them.
         - For each field \(k\), the category \(\LieAlg_k\) consists of Lie algebras over \(k\) with Lie algebra homomorphisms between them.
     
-    4. Similarly, in topology and geometry, there are bunch of geometric structures, and each with structure-preserving functions form categories.
+    5. Similarly, in topology and geometry, there are bunch of geometric structures, and each with structure-preserving functions form categories.
 
         - \(\Top\): topological spaces and continuous functions.
         - \(\Top_\ast\): pointed topological spaces (i.e. a pair \((X,x)\) of a topological space \(X\) and a point \(x\in X\)) and pointed continuous maps between them (i.e. a pointed continuous map from \((X,x)\) to \((Y,y)\) is a continuous map \(f:X\to Y\) with \(f(x) = y\)).
@@ -86,7 +87,7 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\Var_k\): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
         - \(\Sch\): schemes and morphisms of schemes.
     
-    5. There are structures where algebraic and geometric (or analytic) structures are intertwined, and they form categories.
+    6. There are structures where algebraic and geometric (or analytic) structures are intertwined, and they form categories.
 
         - \(\TGrp\): topological groups and continuous group homomorphisms.
         - \(\TRing\): topological rings and continuous ring homomorphisms.
