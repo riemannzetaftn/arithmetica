@@ -59,7 +59,8 @@ We now introduce the most typical examples of categories, from various fields of
 !!! example "Category"
 
     1. The category \(\Set\) has sets as its objects, and functions between those sets as morphisms between the objects. The conditions are verified in set theory. A function is an isomorphism if and only if it is a bijection, and two sets are isomorphic if and only if they have the same cardinality. The automorphisms of a set \(A\) are also called the 'permutations' of \(A\), and \(\Aut_\Set(A)\) is often denoted by \(\Sym(A)\).
-    2. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
+    2. The category \(\Set_\ast\) consists of 'pointed sets' (i.e. a pair \((A,a)\) of a set \(A\) and its element \(a\)) and 'pointed maps' between them (i.e. a pointed map from \((A,a)\) to \((B,b)\) is a function \(f:A\to B\) with \(f(a) = b\)).
+    3. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
 
         - \(\Mnd\): monoids and monoid homomorphisms.
         - \(\Grp\): groups and group homomorphisms.
@@ -70,5 +71,17 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\Field\): fields and ring homomorphisms between them.
         - For each field \(k\), the category \(\Vec_k\) consists of \(k\)-vector spaces and \(k\)-linear maps between them. More generally, for each ring \(R\), the category \(R-\Mod\) (resp. \(\Mod-R\)) consists of left (resp. right) \(R\)-modules and \(R\)-linear maps between them. For these categories, we have another abbreviation for sets of morphisms: we denote them by \(\Hom_R(M,N)\), \(\End_R(M)\), and \(\Aut_R(M)\). If \(R\) is commutative, we simply denote the category by \(\Mod_R\).
         - For each commutative ring \(R\) (including the case of \(R = k\) being a field), the category \(\Alg_R\) consists of \(R\)-algebras (i.e. a ring \(S\) with a ring homomorphism \(\varphi:R\to S\) (or the homomorphism \(\varphi\) itself) whose image lie inside the center of \(S\)) and \(R\)-algebra homomorphisms (if \(\varphi:R\to S\) and \(\psi:R\to T\) represents two \(R\)-algebras, an \(R\)-algebra homomorphism from former to latter is a ring homomorphism \(\phi:S\to T\) with \(\phi\circ\varphi = \psi\)).
-        - For each commutative ring \(R\), the category \(\CAlg_R\) consists of commutative \(R\)-algebras (i.e. an \(R\)-algebra \(\varphi:R\to S\) with \(S\) being commutative) and \(R\)-algebra homomorphisms between them.
+        - For each commutative ring \(R\), the category \(\CAlg_R\) consists of commutative \(R\)-algebras (i.e. an \(R\)-algebra \(\varphi:R\to S\) with \(S\) being a commutative ring) and \(R\)-algebra homomorphisms between them.
         - For each field \(k\), the category \(\LieAlg_k\) consists of Lie algebras over \(k\) with Lie algebra homomorphisms between them.
+    
+    4. Similarly, in topology and geometry, there are bunch of geometric structures, and each with structure-preserving functions form categories.
+
+        - \(\Top\): topological spaces and continuous functions.
+        - \(\Top_\ast): pointed topological spaces (i.e. a pair \((X,x)\) of a topological space \(X\) and a point \(x\in X\)) and pointed continuous maps between them (i.e. a pointed continuous map from \((X,x)\) to \((Y,y)\) is a continuous map \(f:X\to Y\) with \(f(x) = y\)).
+        - \(\hTop\): topological spaces and homotopy classes of continuous functions between them.
+        - \(\hTop_\ast\): pointed topological spaces and basepoint-preserving-homotopy classes of pointed continuous maps between them.
+        - \(\Mfd\): topological manifolds and continuous functions.
+        - \(\SMfd\): smooth manifolds and smooth maps.
+        - \(\CMfd\): complex manifolds and holomorphic maps.
+        - \(\Var_k): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
+        - \(\Sch\): schemes and morphisms of schemes.
