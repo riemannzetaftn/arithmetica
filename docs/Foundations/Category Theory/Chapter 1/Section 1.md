@@ -77,18 +77,18 @@ We now introduce the most typical examples of categories, from various fields of
     4. Similarly, in topology and geometry, there are bunch of geometric structures, and each with structure-preserving functions form categories.
 
         - \(\Top\): topological spaces and continuous functions.
-        - \(\Top_\ast): pointed topological spaces (i.e. a pair \((X,x)\) of a topological space \(X\) and a point \(x\in X\)) and pointed continuous maps between them (i.e. a pointed continuous map from \((X,x)\) to \((Y,y)\) is a continuous map \(f:X\to Y\) with \(f(x) = y\)).
+        - \(\Top_\ast\): pointed topological spaces (i.e. a pair \((X,x)\) of a topological space \(X\) and a point \(x\in X\)) and pointed continuous maps between them (i.e. a pointed continuous map from \((X,x)\) to \((Y,y)\) is a continuous map \(f:X\to Y\) with \(f(x) = y\)).
         - \(\hTop\): topological spaces and homotopy classes of continuous functions between them.
         - \(\hTop_\ast\): pointed topological spaces and basepoint-preserving-homotopy classes of pointed continuous maps between them.
         - \(\Mfd\): topological manifolds and continuous functions.
         - \(\SMfd\): smooth manifolds and smooth maps.
         - \(\CMfd\): complex manifolds and holomorphic maps.
-        - \(\Var_k): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
+        - \(\Var_k\): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
         - \(\Sch\): schemes and morphisms of schemes.
     
     5. There are structures where algebraic and geometric (or analytic) structures are intertwined, and they form categories.
 
         - \(\TGrp\): topological groups and continuous group homomorphisms.
         - \(\TRing\): topological rings and continuous ring homomorphisms.
-        - For each topological field \(k\), the category \(\TVec_k) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
+        - For each topological field \(k\), the category \(\TVec_k\) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
         - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
