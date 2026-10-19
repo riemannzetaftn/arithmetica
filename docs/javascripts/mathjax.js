@@ -203,7 +203,7 @@ window.MathJax = {
       Var: "{\\sf Var}",
       TGrp: "{\\sf TGrp}",
       TRing: "{\\sf TRing}",
-      TVS: "{\\sf TVec}",
+      TVec: "{\\sf TVec}",
       LieGrp: "{\\sf LieGrp}",
       Op: "{\\sf Op}",
       bline: "{\\rm -}",
