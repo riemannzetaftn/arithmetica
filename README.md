@@ -1,1 +1,1 @@
-# Bibliotheca Arithmetica
+# Bibliotheca Arithmeticae
