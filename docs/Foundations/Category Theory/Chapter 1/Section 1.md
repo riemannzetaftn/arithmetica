@@ -113,11 +113,11 @@ We now introduce the most typical examples of categories, from various fields of
 
     Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. In practice, we shall build categories over those categories, and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
 
-        - If \(y\in x\in U\), then \(y\in U\).
-        - If \(x, y\in U\), then \(\{x, y\}, (x, y)\) and \(x\times y\in U\).
-        - If \(x\in U\), then \(\caP(x)\in U\) and \(\cup x\in U\).
-        - \(\bbN\in U\).
-        - If \(f:a\to b\) is a surjective function and \(a\in U\), \(b\subset U\), then \(b\in U\).
+    - If \(y\in x\in U\), then \(y\in U\).
+    - If \(x, y\in U\), then \(\{x, y\}, (x, y)\) and \(x\times y\in U\).
+    - If \(x\in U\), then \(\caP(x)\in U\) and \(\cup x\in U\).
+    - \(\bbN\in U\).
+    - If \(f:a\to b\) is a surjective function and \(a\in U\), \(b\subset U\), then \(b\in U\).
     
     That is, this is a set where all classical mathematical operations can be done. Elements of a fixed universe are called the *small sets*.
     
