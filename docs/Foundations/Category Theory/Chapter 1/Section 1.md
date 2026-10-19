@@ -24,6 +24,7 @@ In this section we define categories.
     - A morphism \(\phi:A\to B\) in \(\sfC\) is called an *isomorphism* if there exist an *inverse* \(\psi:B\to A\), which satisfies \(\psi\circ\phi = \id_A\) and \(\phi\circ\psi = \id_B\).
     - Two objects \(A\) and \(B\) of \(\sfC\) are said to be *isomorphic* if there is an isomorphism \(\phi:A\to B\), and this is denoted by \(A\cong B\).
     - Given an object \(A\) of \(\sfC\), any morphism \(\phi:A\to A\) is called an *endomorphism* of \(A\), and an endomorphism which is an isomorphism is called an *automorphism* of \(A\). The set of endomorphisms and automorphisms of \(A\) are denoted by \(\End_\sfC(A)\) and \(\Aut_\sfC(A)\).
+    - If the class \(\Ob(\sfC)\) is a set, then we say that \(\sfC\) is a *small* category.
     { #def-category }
 
 We observe the followings.
@@ -107,3 +108,19 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
         - Banach (resp. B*-, C*-) algebras with Banach (resp. B*-, C*-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
+
+!!! remark (Grothendieck Universe)
+
+    Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. In practice, we shall build categories over those categories, and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
+
+        - If \(y\in x\in U\), then \(y\in U\).
+        - If \(x, y\in U\), then \(\{x, y\}, (x, y)\) and \(x\times y\in U\).
+        - If \(x\in U\), then \(\caP(x)\in U\) and \(\cup x\in U\).
+        - \(\bbN\in U\).
+        - If \(f:a\to b\) is a surjective function and \(a\in U\), \(b\subset U\), then \(b\in U\).
+    
+    That is, this is a set where all classical mathematical operations can be done. Elements of a fixed universe are called the *small sets*.
+    
+    So we fix a universe \(U\), and we remedy the above examples to only include small objects; i.e. small sets, posets, groups, rings, and so on, which is enough for our practical purpose. Then the resulting classes \(\Ob(\sfC)\) are all sets (which might be not small itself). If \(\Ob(\sfC)\) is itself small, and each \(\Hom_\sfC(A,B)\) is small, then we say that \(\sfC\) is a *small category*. Then we can build categories over small categories with no foundational problem.
+
+    However, checking if some built-up category is indeed consists of sets, or if it is small, is tedious. For this reason, in this blog, we shall deliberately ignore these foundational issues. We shall construct as we wish, on the belief that we can reduce the size if necessary.

@@ -185,7 +185,7 @@ window.MathJax = {
       Dom: "{\\sf Dom}",
       Field: "{\\sf Field}",
       Set: "{\\sf Set}",
-      Mfd: "{\\sf Man}",
+      Mfd: "{\\sf Mfd}",
       SMfd: "{\\sf SMfd}",
       CMfd: "{\\sf CMan}",
       Top: "{\\sf Top}",
