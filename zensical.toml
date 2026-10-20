@@ -24,3 +24,6 @@ permalink = true
 generic = true
 [project.markdown_extensions.pymdownx.details]
 [project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "tikzcd", class = "tikzcd", format = "tikzcd_fence.fence" },
+]
