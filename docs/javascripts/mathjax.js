@@ -205,7 +205,7 @@ window.MathJax = {
       Cat: "{\\sf Cat}",
       Cov: "{\\sf Cov}",
       LRS: "{\\sf LRS}",
-      Mat: "{\\sf Mat}"
+      Mat: "{\\sf Mat}",
       Sym: "{\\rm Sym}",
       Nat: "{\\rm Nat}",
       op: "{\\rm op}",
