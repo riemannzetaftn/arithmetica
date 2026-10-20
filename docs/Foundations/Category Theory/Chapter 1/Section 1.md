@@ -125,7 +125,8 @@ Note that in the most of the above examples, the objects are sets with additiona
         - For any topological space \(X\), the topology (collection of open sets) form a poset under inclusion, and the induced poset category is denoted by \(\Op(X)\). In other words, this is a category with objects being open subsets of \(X\) and morphisms being inclusion of those open subsets.
     5. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
     6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite paths between them, the composition is concatenation of the paths, and the identities are the empty paths.
-        - The graph of two vertices and two distinct edges from a vertice to another induces a category, looks like the following diagram: ```tikzcd
+        - The graph of two vertices and two distinct edges from a vertice to another induces a category, looks like the following diagram:
+            ```tikzcd
                 \begin{tikzcd}
                     &N\arrow[dd,"\varphi"{description}]\arrow[ddddl, bend right = 30, "\psi_i"{description}]\arrow[ddddr, bend left = 30, "\psi_j"{description}]\\
                     \\
