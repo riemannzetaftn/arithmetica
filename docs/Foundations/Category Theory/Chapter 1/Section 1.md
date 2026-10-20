@@ -126,10 +126,10 @@ Note that in the most of the above examples, the objects are sets with additiona
     5. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
     6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite paths between them, the composition is concatenation of the paths, and the identities are the empty paths.
         - The graph of two vertices and two distinct edges from a vertice to another induces a category, looks like the following diagram: 
-    ```tikzcd
-        A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
-        C \arrow[r, "k"'] & D
-    ```
+        ```tikzcd
+            A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
+            C \arrow[r, "k"'] & D
+        ```
 
 !!! remark "Grothendieck Universe"
 
