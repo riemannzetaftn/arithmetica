@@ -4,7 +4,7 @@ site_url = "https://riemannzetaftn.github.io/bib.arithmeticae/"
 extra_javascript = [
   "javascripts/mathjax.js",
   "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
-  "javascripts/theorems.js"
+  "javascripts/theorems.js",
   "javascripts/tikzcd.js"
 ]
 extra_css = ["stylesheets/tikzcd.css"]
