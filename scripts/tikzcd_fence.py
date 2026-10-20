@@ -1,6 +1,7 @@
 """SuperFences custom fence: ```tikzcd 블록을 미리 렌더된 SVG로 치환."""
 import hashlib
 import html
+import re
 from functools import lru_cache
 from pathlib import Path
 
@@ -24,11 +25,16 @@ def digest(source: str) -> str:
     h.update(normalize(source).encode("utf-8"))
     return h.hexdigest()[:16]
 
+_WHITE_FILL = re.compile(r"""fill=(['"])#fff(?:fff)?\1""")
+_WHITE_STROKE = re.compile(r"""stroke=(['"])#fff(?:fff)?\1""")
 
 def fence(source, language, class_name, options, md, **kwargs):
     path = CACHE_DIR / f"{digest(source)}.svg"
     if path.exists():
-        return f'<div class="tikzcd">{path.read_text(encoding="utf-8")}</div>'
+        svg = path.read_text(encoding="utf-8")
+        svg = _WHITE_FILL.sub(r'\g<0> class="tikzcd-bg"', svg)          # description 라벨
+        svg = _WHITE_STROKE.sub(r'\g<0> class="tikzcd-bg-stroke"', svg)  # crossing over
+        return f'<div class="tikzcd">{svg}</div>'
     return (
         '<pre class="tikzcd-missing"><code>'
         "[tikzcd not rendered: run python scripts/render_tikzcd.py]\n"
