@@ -128,11 +128,7 @@ Note that in the most of the above examples, the objects are sets with additiona
         - The graph of two vertices and two distinct edges from a vertice to another induces a category, looks like the following diagram:
             ```tikzcd
                 \begin{tikzcd}
-                    &N\arrow[dd,"\varphi"{description}]\arrow[ddddl, bend right = 30, "\psi_i"{description}]\arrow[ddddr, bend left = 30, "\psi_j"{description}]\\
-                    \\
-                    &N'\arrow[ddl, swap, "\psi'_i"{description}]\arrow[ddr, "\psi'_j"{description}]\\
-                    \\
-                    \caF(i) \arrow[rr, "\caF(\phi)"{description}] & &\caF(j)
+                    \bullet \arrow[rr, shift left = 5pt]\arrow[rr, shift right = 5pt] & &\bullet
                 \end{tikzcd}
             ```
 
