@@ -106,7 +106,7 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\TRing\): topological rings and continuous ring homomorphisms.
         - For each topological field \(k\), the category \(\TVec_k\) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
         - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
-        - Banach (resp. B*-, C*-) algebras with Banach (resp. B*-, C*-) algebra homomorphisms.
+        - Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebras with Banach (resp. B*-, C*-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
 
 Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures. But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
