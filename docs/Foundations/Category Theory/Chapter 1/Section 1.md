@@ -134,7 +134,7 @@ Note that in the most of the above examples, the objects are sets with additiona
                     \\
                     \caF(i) \arrow[rr, "\caF(\phi)"{description}] & &\caF(j)
                 \end{tikzcd}
-            '''
+            ```
 
 !!! remark "Grothendieck Universe"
 
