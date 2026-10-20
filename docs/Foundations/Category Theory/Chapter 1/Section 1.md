@@ -9,7 +9,7 @@ In this section we define categories.
     A *category* $\sfC$ consists of the following data.
 
     - A class of its *objects*, denoted by \(\Ob(\sfC)\), and
-    - For each pair \((A,B)\) of its objects, a set of the *morphisms* from $A$ to $B$, denoted by \(\Hom_{\sfC}(A,B)\). We denote \(f\in\Hom_\sfC(A,B)\) by \(\phi:A\to B\).
+    - For each pair \((A,B)\) of its objects, a set of the *morphisms* from $A$ to $B$, denoted by \(\Hom_{\sfC}(A,B)\). We denote \(\phi\in\Hom_\sfC(A,B)\) by \(\phi:A\to B\).
     - For each triple \((A,B,C)\) of its objects, a *composition function* \(\circ=\circ_{A,B,C}:\Hom_{\sfC}(B,C)\times\Hom_{\sfC}(A,B)\to\Hom_{\sfC}(A,C)\), \((\phi,\psi)\mapsto \phi\circ\psi\).
 
     These data are subject to the following conditions.
@@ -24,7 +24,6 @@ In this section we define categories.
     - A morphism \(\phi:A\to B\) in \(\sfC\) is called an *isomorphism* if there exist an *inverse* \(\psi:B\to A\), which satisfies \(\psi\circ\phi = \id_A\) and \(\phi\circ\psi = \id_B\).
     - Two objects \(A\) and \(B\) of \(\sfC\) are said to be *isomorphic* if there is an isomorphism \(\phi:A\to B\), and this is denoted by \(A\cong B\).
     - Given an object \(A\) of \(\sfC\), any morphism \(\phi:A\to A\) is called an *endomorphism* of \(A\), and an endomorphism which is an isomorphism is called an *automorphism* of \(A\). The set of endomorphisms and automorphisms of \(A\) are denoted by \(\End_\sfC(A)\) and \(\Aut_\sfC(A)\).
-    - If the class \(\Ob(\sfC)\) is a set, then we say that \(\sfC\) is a *small* category.
     { #def-category }
 
 We observe the followings.
@@ -50,6 +49,7 @@ We observe the followings.
         \end{align*}
         
         and similarly \((\psi\circ\phi)\circ(\phi^{-1}\circ\psi^{-1}) = \id_C\).
+- The set \(\End_\sfC(A)\) is a monoid, with \(\id_A\) being the identity and composition being the multiplication. Then \(\Aut_\sfC(A)\) is its subset of invertible elements, hence form a group.
     
     Therefore, the relation of being isomorphic is an equivalence relation, and we sometimes identify those objects.
 
@@ -106,21 +106,28 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\TRing\): topological rings and continuous ring homomorphisms.
         - For each topological field \(k\), the category \(\TVec_k\) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
         - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
-        - Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebras with Banach (resp. B*-, C*-) algebra homomorphisms.
+        - Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebras with Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
 
 Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures. But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
 
 !!! example "More Categories"
 
-    1. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). The followings are the first examples of discrete categories.
+    1. Sets and binary relations (which is a generalization of functions, and we can compose relations) between them form a category \(\Rel\). 
+    2. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). The followings are the first examples of discrete categories.
         - When \(S = 0 = \emptyset\), we obtain the *empty category*, which we denote by \(\mathsf{0}\), is a category with no object or morphisms.
         - When \(S = 1 = \{0\}\) is a singleton, we obtain the category \(\mathsf{1}\) with unique object \(\ast\) and unique morphism \(\id_\ast\).
-    2. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. One can easily verity that any category with unique object leads to a monoid. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
-    3. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). The followings are special cases.
-        - For any set \(S\), the equality \(=\) is a partial order, and the induced poset category is the same as the discrete category with underlying set \(\mathsf{S}\). Thus discrete categories are poset categories.
+    3. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. Any category with unique object leads to a monoid, by the last observation after the defintion of categories. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
+    4. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). The followings are special cases.
+        - The category \(\mathsf{2}\) is induced from the poset \(2 = \{0,1\}\) with usual order.
+        - For any set \(S\), the equality \(=\) is a partial order, and the induced poset category is the same as the discrete category with underlying set \(S\). Thus discrete categories are poset categories.
         - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, \(\bbN\) with divisibility order form poset categories.
         - For any topological space \(X\), the topology (collection of open sets) form a poset under inclusion, and the induced poset category is denoted by \(\Op(X)\). In other words, this is a category with objects being open subsets of \(X\) and morphisms being inclusion of those open subsets.
+    5. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\time n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
+    6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite paths between them, the composition is concatenation of the paths, and the identities are the empty paths.
+        - The graph of two vertices and two distinct edges from a vertice to another induces a category, looks like the following diagram: \begin{align*}
+                \bullet \rightarrow[shift above]\rightarrow[shift below] \bullet
+            \end{align*}
 
 !!! remark "Grothendieck Universe"
 
