@@ -1,0 +1,2 @@
+.md-typeset .tikzcd { text-align: center; margin: 1em 0; overflow-x: auto; }
+.md-typeset .tikzcd svg { color: var(--md-typeset-color); max-width: 100%; height: auto; }

@@ -1,12 +1,48 @@
+# FIRST ver.
+# name: Documentation
+# on:
+#   push:
+#     branches:
+#       - main
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+# jobs:
+#   deploy:
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/configure-pages@v6
+#       - uses: actions/checkout@v7
+#       - uses: actions/setup-python@v6
+#         with:
+#           python-version: 3.x
+#       - run: pip install zensical
+#       - run: python scripts/gen_nav.py
+#       - run: zensical build --clean
+#       - uses: actions/upload-pages-artifact@v5
+#         with:
+#           path: site
+#       - uses: actions/deploy-pages@v5
+#         id: deployment
+
+# to use tikzcd.
+
 name: Documentation
 on:
   push:
     branches:
       - main
 permissions:
-  contents: read
+  contents: write   # read → write: 렌더된 SVG를 자동 커밋하기 위해
   pages: write
   id-token: write
+concurrency:        # 빌드가 동시에 두 개 돌면서 자동 커밋끼리 충돌하는 것을 방지
+  group: pages
+  cancel-in-progress: false
 jobs:
   deploy:
     environment:
@@ -20,8 +56,42 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install zensical
+
+      # ---------- tikzcd ----------
+      - name: Check tikzcd diagrams
+        id: tikzcd
+        run: |
+          if python scripts/render_tikzcd.py --check; then
+            echo "missing=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "missing=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install TeX (only when needed)
+        if: steps.tikzcd.outputs.missing == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-recommended texlive-pictures
+          dvisvgm --version
+
+      - name: Render and commit diagrams
+        if: steps.tikzcd.outputs.missing == 'true'
+        run: |
+          python scripts/render_tikzcd.py --prune
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tikzcd
+          if ! git diff --cached --quiet; then
+            git commit -m "Render tikzcd diagrams [skip ci]"
+            git push || echo "::warning::SVG 자동 커밋 push 실패 (이번 배포에는 반영됨)"
+          fi
+      # ----------------------------
+
       - run: python scripts/gen_nav.py
       - run: zensical build --clean
+        env:
+          PYTHONPATH: scripts
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site

@@ -6,6 +6,7 @@ extra_javascript = [
   "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
   "javascripts/theorems.js"
 ]
+extra_css = ["stylesheets/tikzcd.css"]
 
 [project.theme]
 language = "en"
@@ -24,3 +25,6 @@ permalink = true
 generic = true
 [project.markdown_extensions.pymdownx.details]
 [project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "tikzcd", class = "tikzcd", format = "tikzcd_fence.fence" },
+]

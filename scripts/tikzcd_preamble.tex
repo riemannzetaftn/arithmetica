@@ -1,0 +1,290 @@
+\def\pgfsysdriver{pgfsys-dvisvgm.def}
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz-cd}
+%%%%%%%alphabets%%%%%%%%%
+\newcommand{\frA}{\mathfrak{A}}
+\newcommand{\frB}{\mathfrak{B}}
+\newcommand{\frC}{\mathfrak{C}}
+\newcommand{\frD}{\mathfrak{D}}
+\newcommand{\frE}{\mathfrak{E}}
+\newcommand{\frF}{\mathfrak{F}}
+\newcommand{\frG}{\mathfrak{G}}
+\newcommand{\frH}{\mathfrak{H}}
+\newcommand{\frI}{\mathfrak{I}}
+\newcommand{\frJ}{\mathfrak{J}}
+\newcommand{\frK}{\mathfrak{K}}
+\newcommand{\frL}{\mathfrak{L}}
+\newcommand{\frM}{\mathfrak{M}}
+\newcommand{\frN}{\mathfrak{N}}
+\newcommand{\frO}{\mathfrak{O}}
+\newcommand{\frP}{\mathfrak{P}}
+\newcommand{\frQ}{\mathfrak{Q}}
+\newcommand{\frR}{\mathfrak{R}}
+\newcommand{\frS}{\mathfrak{S}}
+\newcommand{\frT}{\mathfrak{T}}
+\newcommand{\frU}{\mathfrak{U}}
+\newcommand{\frV}{\mathfrak{V}}
+\newcommand{\frW}{\mathfrak{W}}
+\newcommand{\frX}{\mathfrak{X}}
+\newcommand{\frY}{\mathfrak{Y}}
+\newcommand{\frZ}{\mathfrak{Z}}
+\newcommand{\fra}{\mathfrak{a}}
+\newcommand{\frb}{\mathfrak{b}}
+\newcommand{\frc}{\mathfrak{c}}
+\newcommand{\frd}{\mathfrak{d}}
+\newcommand{\fre}{\mathfrak{e}}
+\newcommand{\frf}{\mathfrak{f}}
+\newcommand{\frg}{\mathfrak{g}}
+\newcommand{\frh}{\mathfrak{h}}
+\newcommand{\fri}{\mathfrak{i}}
+\newcommand{\frj}{\mathfrak{j}}
+\newcommand{\frk}{\mathfrak{k}}
+\newcommand{\frl}{\mathfrak{l}}
+\newcommand{\frm}{\mathfrak{m}}
+\newcommand{\frn}{\mathfrak{n}}
+\newcommand{\fro}{\mathfrak{o}}
+\newcommand{\frp}{\mathfrak{p}}
+\newcommand{\frq}{\mathfrak{q}}
+\newcommand{\frr}{\mathfrak{r}}
+\newcommand{\frs}{\mathfrak{s}}
+\newcommand{\frt}{\mathfrak{t}}
+\newcommand{\fru}{\mathfrak{u}}
+\newcommand{\frv}{\mathfrak{v}}
+\newcommand{\frw}{\mathfrak{w}}
+\newcommand{\frx}{\mathfrak{x}}
+\newcommand{\fry}{\mathfrak{y}}
+\newcommand{\frz}{\mathfrak{z}}
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\caA}{\mathcal{A}}
+\newcommand{\caB}{\mathcal{B}}
+\newcommand{\caC}{\mathcal{C}}
+\newcommand{\caD}{\mathcal{D}}
+\newcommand{\caE}{\mathcal{E}}
+\newcommand{\caF}{\mathcal{F}}
+\newcommand{\caG}{\mathcal{G}}
+\newcommand{\caH}{\mathcal{H}}
+\newcommand{\caI}{\mathcal{I}}
+\newcommand{\caJ}{\mathcal{J}}
+\newcommand{\caK}{\mathcal{K}}
+\newcommand{\caL}{\mathcal{L}}
+\newcommand{\caM}{\mathcal{M}}
+\newcommand{\caN}{\mathcal{N}}
+\newcommand{\caO}{\mathcal{O}}
+\newcommand{\caP}{\mathcal{P}}
+\newcommand{\caQ}{\mathcal{Q}}
+\newcommand{\caR}{\mathcal{R}}
+\newcommand{\caS}{\mathcal{S}}
+\newcommand{\caT}{\mathcal{T}}
+\newcommand{\caU}{\mathcal{U}}
+\newcommand{\caV}{\mathcal{V}}
+\newcommand{\caW}{\mathcal{W}}
+\newcommand{\caX}{\mathcal{X}}
+\newcommand{\caY}{\mathcal{Y}}
+\newcommand{\caZ}{\mathcal{Z}}
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfl}{\mathbf{l}}
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+
+\newcommand{\bfzero}{\mathbf{0}}
+
+\newcommand{\sfA}{\mathsf{A}}
+\newcommand{\sfB}{\mathsf{B}}
+\newcommand{\sfC}{\mathsf{C}}
+\newcommand{\sfD}{\mathsf{D}}
+\newcommand{\sfE}{\mathsf{E}}
+\newcommand{\sfF}{\mathsf{F}}
+\newcommand{\sfG}{\mathsf{G}}
+\newcommand{\sfH}{\mathsf{H}}
+\newcommand{\sfI}{\mathsf{I}}
+\newcommand{\sfJ}{\mathsf{J}}
+\newcommand{\sfK}{\mathsf{K}}
+\newcommand{\sfL}{\mathsf{L}}
+\newcommand{\sfM}{\mathsf{M}}
+\newcommand{\sfN}{\mathsf{N}}
+\newcommand{\sfO}{\mathsf{O}}
+\newcommand{\sfP}{\mathsf{P}}
+\newcommand{\sfQ}{\mathsf{Q}}
+\newcommand{\sfR}{\mathsf{R}}
+\newcommand{\sfS}{\mathsf{S}}
+\newcommand{\sfT}{\mathsf{T}}
+\newcommand{\sfU}{\mathsf{U}}
+\newcommand{\sfV}{\mathsf{V}}
+\newcommand{\sfW}{\mathsf{W}}
+\newcommand{\sfX}{\mathsf{X}}
+\newcommand{\sfY}{\mathsf{Y}}
+\newcommand{\sfZ}{\mathsf{Z}}
+
+\newcommand{\vaprhi}{\varphi}
+
+%%%%%%%%%%%%Basic%%%%%%%%%%%%%
+\renewcommand{\implies}{\Longrightarrow}
+\renewcommand{\impliedby}{\Longleftarrow}
+
+%%%%%%%%%%%Category%%%%%%%%%%%%%%
+\newcommand{\Ob}{{\rm Ob}}
+\newcommand{\Mor}{{\rm Mor}}
+\newcommand{\Cat}{{\sf Cat}}
+\newcommand{\Nat}{{\rm Nat}}
+\newcommand{\op}{{\rm op}}
+\newcommand{\Mnd}{{\sf Mnd}}
+\newcommand{\Grp}{{\sf Grp}}
+\newcommand{\Ab}{{\sf Ab}}
+\newcommand{\Ring}{{\sf Ring}}
+\newcommand{\Alg}{{\sf Alg}}
+\newcommand{\CAlg}{{\sf CAlg}}
+\newcommand{\LieAlg}{{\sf LieAlg}}
+\newcommand{\CRing}{{\sf CRing}}
+\newcommand{\LRing}{{\sf LRing}}
+\newcommand{\Dom}{{\sf Dom}}
+\newcommand{\Field}{{\sf Field}}
+\newcommand{\Set}{{\sf Set}}
+\newcommand{\Man}{{\sf Man}}
+\newcommand{\Mat}{{\sf Mat}}
+\newcommand{\CMan}{{\sf CMan}}
+\renewcommand{\Top}{{\sf Top}}
+\newcommand{\hTop}{{\sf hTop}}
+\newcommand{\Diff}{{\sf Diff}}
+\renewcommand{\Vec}{{\sf Vec}}
+\newcommand{\Mod}{{\sf Mod}}
+\newcommand{\PMod}{{\sf PMod}}
+\newcommand{\PAlg}{{\sf PAlg}}
+\newcommand{\PSh}{{\sf PSh}}
+\newcommand{\Sh}{{\sf Sh}}
+\newcommand{\AffSch}{{\sf AffSch}}
+\newcommand{\Sch}{{\sf Sch}}
+\newcommand{\LSch}{{\sf LSch}}
+\newcommand{\Var}{{\sf Var}}
+\newcommand{\Op}{{\sf Op}}
+\newcommand{\bline}{{\rm -}}
+\newcommand{\eq}{{\rm eq}}
+\newcommand{\coeq}{{\rm coeq}}
+\DeclareMathOperator*\colim{colim}
+\DeclareMathOperator*\slim{l} %short limit
+\newcommand{\dom}{{\rm dom}}
+\newcommand{\cod}{{\rm cod}}
+\newcommand{\ev}{{\rm ev}}
+\newcommand{\hol}{{\rm hol}}
+\newcommand{\sh}{{\rm sh}}
+\newcommand{\Cov}{\mathsf{Cov}}
+\newcommand{\pre}{{\rm pre}}
+\newcommand{\LRS}{{\sf LRS}}
+
+%%%%%%%%%%%%Analysis%%%%%%%%%%%%%
+\newcommand{\cl}{{\rm cl}}
+\newcommand{\Int}{{\rm int}}
+\newcommand{\bd}{{\rm bd}}
+\newcommand{\ext}{{\rm ext}}
+\newcommand{\der}{{\rm der}}
+\newcommand{\del}{\partial}
+\def\res{\mathop{\rm{Res}}\limits}
+\newcommand{\Log}{{\rm Log}}
+\newcommand{\Arg}{{\rm Arg}}
+\newcommand{\sgn}{{\rm sgn}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\abs}[1]{\left\vert #1\right\vert}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\zero}{\mathbf{0}}
+\newcommand{\Rbar}{\overline{\bbR}}
+\def\uplim{\mathop{\overline{\lim}}\limits}
+\def\lowlim{\mathop{\underline{\lim}}\limits}
+\renewcommand{\d}{{\rm d}}
+\renewcommand{\a}{{\rm a}}
+\renewcommand{\c}{{\rm c}}
+\renewcommand{\l}{{\rm l}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\renewcommand{\Hat}{\widehat}
+\renewcommand{\Tilde}{\widetilde}
+\newcommand{\uline}{\underline}
+\newcommand{\si}{{\rm si}}
+
+%%%%%%%%%%%%Algebra%%%%%%%%%%%%%%
+\newcommand{\id}{{\rm id}}
+\newcommand{\im}{{\rm im}}
+\newcommand{\ind}{{\rm ind}}
+\newcommand{\Sym}{{\rm Sym}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\Hom}{{\rm Hom}}
+\newcommand{\sHom}{\mathcal{H}om}
+\newcommand{\End}{{\rm End}}
+\newcommand{\Iso}{{\rm Iso}}
+\newcommand{\Emb}{{\rm Emb}}
+\newcommand{\Frac}{{\rm Frac}}
+\newcommand{\Gal}{{\rm Gal}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\SL}{{\rm SL}}
+\newcommand{\PGL}{{\rm PGL}}
+\newcommand{\PSL}{{\rm PSL}}
+\newcommand{\Mat}{{\rm Mat}}
+\newcommand{\Spec}{{\rm Spec}}
+\newcommand{\Proj}{{\rm Proj}}
+\DeclareMathOperator{\coker}{{\rm coker}}
+\DeclareMathOperator{\coim}{{\rm coim}}
+\let\im\relax\DeclareMathOperator{\im}{{\rm im}}
+\newcommand{\ann}{{\rm ann}}
+\renewcommand{\char}{{\rm char}}
+\newcommand{\sat}{{\rm sat}}
+\newcommand{\nil}{{\rm nil}}
+
+\newcommand{\V}{{\rm V}}
+\newcommand{\D}{{\rm D}}
+\newcommand{\I}{{\rm I}}
+\newcommand{\N}{{\rm N}}
+
+%%%%%%%%%%%%%%%Number Theory%%%%%%%%%%%%%%%%
+\newcommand{\li}{{\rm li}}
+\newcommand{\lcm}{{\rm lcm}}
+
+\pagestyle{empty}
+\begin{document}
+%%BODY%%
+\end{document}
