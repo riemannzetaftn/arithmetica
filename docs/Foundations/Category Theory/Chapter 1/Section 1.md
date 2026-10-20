@@ -111,7 +111,7 @@ We now introduce the most typical examples of categories, from various fields of
 
 Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures. But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
 
-!!! example "More Categories"
+!!! example "Elementary Categories"
 
     1. Sets and binary relations (which is a generalization of functions, and we can compose relations) between them form a category \(\Rel\). 
     2. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). The followings are the first examples of discrete categories.
@@ -131,12 +131,26 @@ Note that in the most of the above examples, the objects are sets with additiona
                     \bullet \arrow[rr, shift left = 5pt]\arrow[rr, shift right = 5pt] & &\bullet
                 \end{tikzcd}
             ```
-        - Other such graphs include the followings.
+        - Other such graphs include the followings, whose induced categories are also poset categories.
             ```tikzcd
                 \begin{tikzcd}
                     \bullet & &\bullet \arrow[ll]\arrow[rr] & &\bullet, &\bullet \arrow[rr] & &\bullet & &\bullet \arrow[ll]
                 \end{tikzcd}
             ```
+
+We now look at some elementary constructions on the categories.
+
+!!! definition "First Constructions on Categories"
+
+    1. A *subcategory* \(\sfD\) of a category \(\sfC\) is a category with \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_{\sfD}(A,B)\subset\Hom_{\sfC}(A,B)\) for each \(A, B\in\Ob(\sfD)\), where identities and composition are inherited from that of \(\sfC\).
+    2. The *product category* of two categories \(\sfC\) and \(\sfD\) is the category given by \(\Ob(\sfC\times\sfD) = \Ob(\sfC)\times\Ob(\sfD)\), 
+        \[\Hom_{\sfC\times\sfD}((A,C),(B,D)) = \Hom_{\sfC}(A,B)\times\Hom_{\sfD}(C,D),\]
+        and the composition being defined componentwisely.
+    3. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\)
+
+!!! example "First Constructions on Categories"
+
+    1.  If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. 
 
 !!! remark "Grothendieck Universe"
 
