@@ -154,6 +154,7 @@ We now look at some elementary constructions on the categories.
 !!! example "First Constructions on Categories"
 
     1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. The followings are usual examples of subcategories.
+    
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
         - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories.
         - \(\Field\subset\Dom\subset\CRing\subset\Ring\), and \(\CAlg_R\subset\Alg_R\) for \(R\in\Ob(\CRing)\). All inclusions except for the second one define full subcategories.
