@@ -6,7 +6,7 @@ A category is a structure where we relate objects by arrows between them. Why no
 
 !!! definition "Functor"
 
-    A *functor* \(\caF\) from a category \(\sfC\) to a category \(\sfD\) consists of the following data: 
+    A *(covariant) functor* \(\caF\) from a category \(\sfC\) to a category \(\sfD\), denoted by \(\caF:\sfC\to\sfD\), consists of the following data: 
 
     - A function \(\Ob(\sfC)\to\Ob(\sfD)\), also denoted by \(\caF\).
     - For each pair of objects \((A,B)\) of \(\sfC\), a function \(\Hom_{\sfC}(A,B)\to\Hom_\sfD(\caF(A),\caF(B))\), also denoted by \(\caF\).
@@ -26,4 +26,14 @@ A category is a structure where we relate objects by arrows between them. Why no
             \Hom_{\sfC}(A,B) \arrow[rr,"\caF"{description}] & &\Hom_\sfD(\caF(A),\caF(B)) \arrow[rr,"\caG"{description}] & &\Hom_\sfE(\caG(\caF(A)),\caG(\caF(B))).
         \end{tikzcd}
     ```
+
+    A *contravariant functor* \(\caF:\sfC\to\sfD\) is a covariant functor \(\caF:\sfC^\op\to\sfD\). Equivalently, it consists of the following data: 
+
+    - A function \(\caF:\Ob(\sfC)\to\Ob(\sfD)\).
+    - For each pair of objects \((A,B)\) of \(\sfC\), a function \(\caF:\Hom_{\sfC}(A,B)\to\Hom_\sfD(\caF(B),\caF(A))\).
+
+    These data are subject to the following conditions.
+
+    - For any object \(A\) of \(\sfC\), \(\caF(\id_A) = \id_{\caF(A)}\). In words, the functor preserves identities.
+    - For any composable pair of morphisms \((\phi:B\to C,\psi:A\to B)\) in \(\sfC\), \(\caF(\phi\circ\psi) = \caF(\psi)\circ\caF(\phi)\). In words, the functor preserves compositions, but reverses the order.
 
