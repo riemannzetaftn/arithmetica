@@ -55,6 +55,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: 3.x
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - run: pip install zensical
 
       # ---------- tikzcd ----------
@@ -87,6 +90,12 @@ jobs:
             git push || echo "::warning::SVG 자동 커밋 push 실패 (이번 배포에는 반영됨)"
           fi
       # ----------------------------
+      - name: Append last-updated dates
+        run: |
+          git ls-files 'docs/*.md' 'docs/**/*.md' | while IFS= read -r f; do
+            d=$(git log -1 --format=%cs -- "$f")
+            printf '\n\n---\n\n<small>Last updated: %s</small>\n' "$d" >> "$f"
+          done
 
       - run: python scripts/gen_nav.py
       - run: zensical build --clean

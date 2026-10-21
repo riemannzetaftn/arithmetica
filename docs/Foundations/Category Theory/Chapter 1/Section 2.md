@@ -18,7 +18,7 @@ A category is a structure where we relate objects by arrows between them. Why no
 
     For any category \(\sfC\), there is a functor \(\id_\sfC\), called the *identity functor* of \(\sfC\), which consists of identity functions on the sets \(\Ob(\sfC)\), \(\Hom_\sfC(A,B)\).
 
-    Given a pair of functors \(\caG:\sfD\to\sfE\) and \(\caF:\sfC\to\sfD\), we define their *composition* by the functor \(\caG\circ\caF:\sfC\to\sfE\), consists of compositions 
+    Given a pair of functors \(\caG:\sfD\to\sfE\) and \(\caF:\sfC\to\sfD\), we define their *composition* by the functor \(\caG\circ\caF:\sfC\to\sfE\), which consists of compositions 
 
     ```tikzcd
         \begin{tikzcd}
