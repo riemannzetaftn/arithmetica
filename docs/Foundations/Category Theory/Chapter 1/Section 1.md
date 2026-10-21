@@ -9,7 +9,7 @@ In this section we define categories.
     A *category* $\sfC$ consists of the following data.
 
     - A class of its *objects*, denoted by \(\Ob(\sfC)\), and
-    - For each pair \((A,B)\) of its objects, a set of the *morphisms* from $A$ to $B$, denoted by \(\Hom_{\sfC}(A,B)\). We denote \(\phi\in\Hom_\sfC(A,B)\) by \(\phi:A\to B\).
+    - For each pair \((A,B)\) of its objects, a set of the *morphisms* or *arrows* from $A$ to $B$, denoted by \(\Hom_{\sfC}(A,B)\). We denote \(\phi\in\Hom_\sfC(A,B)\) by \(\phi:A\to B\).
     - For each triple \((A,B,C)\) of its objects, a *composition function* \(\circ=\circ_{A,B,C}:\Hom_{\sfC}(B,C)\times\Hom_{\sfC}(A,B)\to\Hom_{\sfC}(A,C)\), \((\phi,\psi)\mapsto \phi\circ\psi\).
 
     These data are subject to the following conditions.
@@ -185,6 +185,6 @@ We now look at some elementary constructions on the categories.
     
     That is, this is a set where all classical mathematical operations can be done. Elements of a fixed universe are called the *small sets*.
     
-    So we fix a universe \(U\), and we remedy the above examples to only include small objects; i.e. small sets, posets, groups, rings, and so on, which is enough for our practical purpose. Then the resulting classes \(\Ob(\sfC)\) are all sets (which might be not small itself). If \(\Ob(\sfC)\) is itself small, and each \(\Hom_\sfC(A,B)\) is small, then we say that \(\sfC\) is a *small category*. Then we can build categories over small categories with no foundational problem.
+    So we fix a universe \(U\), and we remedy the above examples to only include small objects; i.e. small sets, posets, groups, rings, and so on, which is enough for our practical purpose. Then the resulting classes \(\Ob(\sfC)\) are all sets (which might be not small itself). **Accordingly, from now on, we shall require that the class of objects of any category to be a set.** If \(\Ob(\sfC)\) is itself small, and each \(\Hom_\sfC(A,B)\) is small, then we say that \(\sfC\) is a *small category*. Then we can build categories over small categories with no foundational problem.
 
     However, checking if some built-up category is indeed consists of sets, or if it is small, is tedious. For this reason, in this blog, we shall deliberately ignore these foundational issues. We shall construct as we wish, on the belief that we can reduce the size if necessary.
