@@ -182,7 +182,7 @@ window.MathJax = {
       Rel: "{\\sf Rel}",
       Mfd: "{\\sf Mfd}",
       SMfd: "{\\sf SMfd}",
-      CMfd: "{\\sf CMan}",
+      CMfd: "{\\sf CMfd}",
       Top: "{\\sf Top}",
       CHaus: "{\\sf CHaus}",
       hTop: "{\\sf hTop}",

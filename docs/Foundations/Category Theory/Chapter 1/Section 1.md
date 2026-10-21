@@ -20,7 +20,7 @@ In this section we define categories.
 
     Given a category \(\sfC\), we define the followings.
 
-    - Given a morphism \(\phi:A\to B\) in \(\sfC\), \(A\) is called a *domain* of \(\phi\) and \(B\) is called a *codomain* of \(\phi\).
+    - Given a morphism \(\phi:A\to B\) in \(\sfC\), \(A\) is called a *domain* (or a *source*) of \(\phi\) and \(B\) is called a *codomain* (or a *target*) of \(\phi\).
     - A morphism \(\phi:A\to B\) in \(\sfC\) is called an *isomorphism* if there exist an *inverse* \(\psi:B\to A\), which satisfies \(\psi\circ\phi = \id_A\) and \(\phi\circ\psi = \id_B\).
     - Two objects \(A\) and \(B\) of \(\sfC\) are said to be *isomorphic* if there is an isomorphism \(\phi:A\to B\), and this is denoted by \(A\cong B\).
     - Given an object \(A\) of \(\sfC\), any morphism \(\phi:A\to A\) is called an *endomorphism* of \(A\), and an endomorphism which is an isomorphism is called an *automorphism* of \(A\). The set of endomorphisms and automorphisms of \(A\) are denoted by \(\End_\sfC(A)\) and \(\Aut_\sfC(A)\).
@@ -92,7 +92,7 @@ We now introduce the most typical examples of categories, from various fields of
     
     6. We now look at examples in analysis / probability or ergodic theory.
 
-        - Metric spaces with morphisms (continuous functions / uniformly continuous functions / Lipschitz functions / \(1\)-Lipschitz functions) form categories.
+        - Metric spaces with morphisms (continuous functions / uniformly continuous functions / Lipschitz functions / \(1\)-Lipschitz functions) form categories. Similarly, metrizable spaces with continuous functions form a category.
         - Uniform spaces and uniformly continuous functions.
         - Measurable spaces and measurable maps.
         - Measure spaces / probability spaces and measure-preserving maps.
@@ -142,15 +142,30 @@ We now look at some elementary constructions on the categories.
 
 !!! definition "First Constructions on Categories"
 
-    1. A *subcategory* \(\sfD\) of a category \(\sfC\) is a category with \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_{\sfD}(A,B)\subset\Hom_{\sfC}(A,B)\) for each \(A, B\in\Ob(\sfD)\), where identities and composition are inherited from that of \(\sfC\).
+    1. A *subcategory* \(\sfD\) of a category \(\sfC\) is a category with \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_{\sfD}(A,B)\subset\Hom_{\sfC}(A,B)\) for each \(A, B\in\Ob(\sfD)\), where identities and composition are inherited from that of \(\sfC\). It is called a *full subcategory* if for each \(A,B\in\Ob(\sfD)\), we have \(\Hom_{\sfD}(A,B) = \Hom_\sfC(A,B)\). We write \(\sfD\subset\sfC\) if \(\sfD\) is a subcategory of \(\sfC\).
     2. The *product category* of two categories \(\sfC\) and \(\sfD\) is the category given by \(\Ob(\sfC\times\sfD) = \Ob(\sfC)\times\Ob(\sfD)\), 
+
         \[\Hom_{\sfC\times\sfD}((A,C),(B,D)) = \Hom_{\sfC}(A,B)\times\Hom_{\sfD}(C,D),\]
+        
         and the composition being defined componentwisely.
-    3. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\)
+    3. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is ketp the same.
+    4. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\varphi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\varphi:A\to B\) to \(\psi:A\to C\) is a morphism \(\phi:B\to C\) such that \(\psi = \phi\circ\varphi\). Its objects are also called the *objects of \(\sfC\) under \(A\)*.
 
 !!! example "First Constructions on Categories"
 
-    1.  If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. 
+    1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. The followings are usual examples of subcategories.
+        - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
+        - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories.
+        - \(\Field\subset\Dom\subset\CRing\subset\Ring\), and \(\CAlg_R\subset\Alg_R\) for \(R\in\Ob(\CRing)\). All inclusions except for the second one define full subcategories.
+        - \(\CHaus,\Mfd\) are full subcategories of \(\Top\).
+        - Metrizable topological spaces with continuous functions form a subcategory of \(\Top\).
+        - Locally compact groups with continuous maps form a subcategory of \(\TGrp\).
+        - Given a category \(\sfC\), the discrete category with underlying set \(\Ob(\sfC)\) is a subcategory of \(\sfC\).
+        - Given a category \(\sfC\) and its object \(A\), the monoid \(\End_\sfC(A)\) induces a category with one object, which is a subcategory of \(\sfC\).
+        - If \(Q\) is a subset of a partially ordered set \(P\), then \(Q\) is itself a partially ordered set under inherited order, and the induces poset categories form a full subcategory \(\sfQ\subset\sfP\). In particular, if \(U\) is an open subset of \(X\), then \(\Op(U)\) is a subcategory of \(\Op(X)\), and inclusion of subsets induce inclusion of full subcategory of associated discrete categories.
+
+        There are non-examples that one needs to be careful: giving more structures do not form subcategories in general. For instance, \(\Grp\) is not a subcategory of \(\Set\): a group \((G,\cdot)\) is more than the underlying set \(G\), and non-isomorphic groups can have same underlying set. Similarly, \(\Ring\) is not a subcategory of \(\Ab\), \(\Top\) is not a subcategory of \(\Set\), uniform spaces and uniformly continuous functions do not form a subcategory of \(\Top\), \(\CMfd\) is not a subcategory of \(\SMfd\), \(\SMfd\) is not a subcategory of \(\Mfd\), \(\LieGrp\) is not a subcategory of \(\TGrp\), and so on.
+    2. 
 
 !!! remark "Grothendieck Universe"
 
