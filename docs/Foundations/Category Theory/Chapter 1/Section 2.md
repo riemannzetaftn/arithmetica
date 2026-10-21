@@ -49,4 +49,4 @@ As you can see, a functor is an arrow between categories: it consists of functio
 !!! example "Functor"
 
     1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\to\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful.
-    2. 
+    2. TBU
