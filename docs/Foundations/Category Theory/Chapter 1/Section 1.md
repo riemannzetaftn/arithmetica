@@ -142,7 +142,7 @@ We now look at some elementary constructions on the categories.
 
 !!! definition "First Constructions on Categories"
 
-    1. A *subcategory* \(\sfD\) of a category \(\sfC\) is a category with \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_{\sfD}(A,B)\subset\Hom_{\sfC}(A,B)\) for each \(A, B\in\Ob(\sfD)\), where identities and composition are inherited from that of \(\sfC\). It is called a *full subcategory* if for each \(A,B\in\Ob(\sfD)\), we have \(\Hom_{\sfD}(A,B) = \Hom_\sfC(A,B)\). We write \(\sfD\subset\sfC\) if \(\sfD\) is a subcategory of \(\sfC\).
+    1. A *subcategory* \(\sfD\) of a category \(\sfC\) is a category with \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_{\sfD}(A,B)\subset\Hom_{\sfC}(A,B)\) for each \(A, B\in\Ob(\sfD)\), where identities and compositions are inherited from that of \(\sfC\). It is called a *full subcategory* if for each \(A,B\in\Ob(\sfD)\), we have \(\Hom_{\sfD}(A,B) = \Hom_\sfC(A,B)\). We write \(\sfD\subset\sfC\) if \(\sfD\) is a subcategory of \(\sfC\).
     2. The *product category* of two categories \(\sfC\) and \(\sfD\) is the category given by \(\Ob(\sfC\times\sfD) = \Ob(\sfC)\times\Ob(\sfD)\), 
 
         \[\Hom_{\sfC\times\sfD}((A,C),(B,D)) = \Hom_{\sfC}(A,B)\times\Hom_{\sfD}(C,D),\]
@@ -156,6 +156,7 @@ We now look at some elementary constructions on the categories.
     1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. The followings are usual examples of subcategories.
 
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
+        - \(\Set\) is a subcategory of \(\Rel\).
         - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories.
         - \(\Field\subset\Dom\subset\CRing\subset\Ring\), and \(\CAlg_R\subset\Alg_R\) for \(R\in\Ob(\CRing)\). All inclusions except for the second one define full subcategories.
         - \(\CHaus,\Mfd\) are full subcategories of \(\Top\).
