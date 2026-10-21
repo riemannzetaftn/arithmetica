@@ -109,7 +109,7 @@ We now introduce the most typical examples of categories, from various fields of
         - Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebras with Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
 
-Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures. But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
+Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures (such categories are informally referred to as *concrete categories*). But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
 
 !!! example "Elementary Categories"
 
@@ -147,14 +147,14 @@ We now look at some elementary constructions on the categories.
 
         \[\Hom_{\sfC\times\sfD}((A,C),(B,D)) = \Hom_{\sfC}(A,B)\times\Hom_{\sfD}(C,D),\]
         
-        and the composition being defined componentwisely.
+        and the composition being defined componentwisely. Of course, one can extend this construction to arbitrary family of categories, as long as the product of object classes exists as a class.
     3. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is ketp the same.
     4. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\varphi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\varphi:A\to B\) to \(\psi:A\to C\) is a morphism \(\phi:B\to C\) such that \(\psi = \phi\circ\varphi\). Its objects are also called the *objects of \(\sfC\) under \(A\)*.
 
 !!! example "First Constructions on Categories"
 
     1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. The followings are usual examples of subcategories.
-    
+
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
         - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories.
         - \(\Field\subset\Dom\subset\CRing\subset\Ring\), and \(\CAlg_R\subset\Alg_R\) for \(R\in\Ob(\CRing)\). All inclusions except for the second one define full subcategories.
@@ -166,11 +166,16 @@ We now look at some elementary constructions on the categories.
         - If \(Q\) is a subset of a partially ordered set \(P\), then \(Q\) is itself a partially ordered set under inherited order, and the induces poset categories form a full subcategory \(\sfQ\subset\sfP\). In particular, if \(U\) is an open subset of \(X\), then \(\Op(U)\) is a subcategory of \(\Op(X)\), and inclusion of subsets induce inclusion of full subcategory of associated discrete categories.
 
         There are non-examples that one needs to be careful: giving more structures do not form subcategories in general. For instance, \(\Grp\) is not a subcategory of \(\Set\): a group \((G,\cdot)\) is more than the underlying set \(G\), and non-isomorphic groups can have same underlying set. Similarly, \(\Ring\) is not a subcategory of \(\Ab\), \(\Top\) is not a subcategory of \(\Set\), uniform spaces and uniformly continuous functions do not form a subcategory of \(\Top\), \(\CMfd\) is not a subcategory of \(\SMfd\), \(\SMfd\) is not a subcategory of \(\Mfd\), \(\LieGrp\) is not a subcategory of \(\TGrp\), and so on.
-    2. 
+    2. Product categories themselves are not really interesting, so we introduce only elementary examples.
+
+        - The discrete category with underlying set \(S_1\times S_2\) is the product category of two discrete categories with underlying sets \(S_1\), \(S_2\).
+        - The category induced from product monoid \(M_1\times M_2\) is the product category of two categories induced from monoids \(M_1, M_2\).
+    3. The under category is opposite of over category: precisely, we have \(A/\sfC = (\sfC^\op/A)^\op\).
+    4. \(\CAlg_R\) is the coslice category \(R/\CRing\).
 
 !!! remark "Grothendieck Universe"
 
-    Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. In practice, we shall build categories over those categories, and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
+    Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. Later, we shall give more constructions of categories and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
 
     - If \(y\in x\in U\), then \(y\in U\).
     - If \(x, y\in U\), then \(\{x, y\}, (x, y)\) and \(x\times y\in U\).
