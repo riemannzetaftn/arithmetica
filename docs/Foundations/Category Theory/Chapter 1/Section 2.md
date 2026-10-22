@@ -1,6 +1,4 @@
----
-title: Section 2. Functors
----
+# Section 2. Functors
 
 A category is a structure where we relate objects by arrows between them. Why not we relate different categories?
 

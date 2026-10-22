@@ -1,6 +1,4 @@
----
-title: Section 1. Affine Schemes
----
+# Section 1. Affine Schemes
 
 In this section, we introduce affine schemes, which are local models of schemes, just as Euclidean spaces are local models of manifolds in topology and differential geometry. Throughout this section, let \(R\) be a (commutative) ring.
 

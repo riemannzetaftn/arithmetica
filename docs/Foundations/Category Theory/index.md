@@ -1,8 +1,3 @@
----
-title: Introduction
-weight: -1
----
-
 A large part of modern mathematics comes from abstraction and generalization of existing concepts and phenomena. If we encounter an interesting phenomena, we usually extract the essence out of it, and generalize the principle. Modern algebra (especially the basic theory of groups, rings, modules or vector spaces) is one typical example: we generalize arithmetic of the integers, rational, real or complex numbers to abstract algebraic structures, and sometimes this rich theory furnish useful insights to the original number systems. The topology or geometry is another example: the figures in two or three dimensions generalizes to topological spaces or to manifolds.
 
 The 'category theory' is the next step of this process. We have the realms of groups, rings, vector spaces, topological spaces and manifolds, and the worlds were seperated, but they have some things in common; they consist of objects and arrows (homomorphisms, linear maps, or continuous maps) between them. This idea leads to the abstract idea of 'category'. Moreover, we can relate different categories via 'functor', whose typical examples are fundamental groups and homology groups in algebraic topology. Using this concepts, we can unify large amount of mathematics in different realms in one language, and sometimes relate different realms to obtain fascinating insights.
