@@ -47,5 +47,10 @@ As you can see, a functor is an arrow between categories: it consists of functio
 
 !!! example "Functor"
 
-    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\to\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>).
-    2. TBU
+    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\hookrightarrow\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>) 1.
+    2. For every concrete category \(\sfC\) where objects are sets with structures, and morphisms are functions preserving the structure, there is a functor into \(\Set\), which sends each object into its underlying set and map each morphism into the underlying function. More generally, if a category \(\sfC\) is obtained by assigning more structure and (possibly) more assumption on the morphism, we have a functor \(\sfC\to\sfD\) that forgets the structure and the assumptions, informally called a *forgetful functor*. Specifically, we have the followings.
+
+    - From every category in [](Section 1.md#ex-category) except for \(\hTop, \hTop_\ast\) to \(\Set\).
+    - \(\Field\to\Dom\to\CRing\to\Ring\to\Ab\to\Grp\to\Mnd\), \(\CAlg_R\to\Alg_R\to\Ring\), \(\CAlg_R\to\CRing\), \(\Mod_R\to\Ab\). More generally, if \(S\) is a commutative \(R\)-algebra, we have forgetful functors \(\Mod_S\to\Mod_R\), \(\Alg_S\to\Alg_R\), \(\CAlg_S\to\CAlg_R\).
+    - \(\LieAlg_k\to\Alg_k\), from the category of \(\ast\)-algebras over \(R\) to \(\Alg_R\).
+    - 
