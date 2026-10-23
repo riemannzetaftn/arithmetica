@@ -228,7 +228,7 @@
       const label = `${KINDS[type]} ${prefix ? prefix + "." : ""}${counters[key]}`;
 
       // 제목: "Theorem 1.2 (Yoneda)"
-      const title = box.querySelector(":scope > [id], :scope > :is(ul, ol) > li[id], :scope > :is(ul, ol) > li > p[id]");
+      const title = box.querySelector(":scope > .admonition-title, :scope > summary");
       if (title) {
         if (box.dataset.thmName === undefined) {
           const raw = title.textContent.trim();
@@ -241,7 +241,7 @@
       // 본문 첫 문단의 id를 박스로 옮겨서 링크가 박스 맨 위로 가게 함
       if (!box.id) {
         // const anchor = box.querySelector(":scope > [id]");
-        const anchor = box.querySelector(":scope > [id], :scope > ul > li[id], :scope > ol > li[id]");
+        const anchor = box.querySelector(":scope > [id], :scope > :is(ul, ol) > li[id], :scope > :is(ul, ol) > li > p[id]");
         if (anchor) {
           box.id = anchor.id;
           anchor.removeAttribute("id");
