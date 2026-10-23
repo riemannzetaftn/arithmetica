@@ -218,7 +218,10 @@ window.MathJax = {
       ev: "{\\rm ev}",
       hol: "{\\rm hol}",
       sh: "{\\rm sh}",
-      pre: "{\\rm pre}"
+      pre: "{\\rm pre}",
+      Spec: "{\rm Spec}",
+      V: "{\rm V}",
+      D: "{\rm D}"
     },
   },
   options: {
