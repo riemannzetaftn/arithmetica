@@ -166,7 +166,8 @@
       const type = typeOf(box);
       const key = keyOf(type);
       counters[key] = (counters[key] || 0) + 1;
-      const anchor = box.id ? box : box.querySelector(":scope > [id]");
+      // const anchor = box.id ? box : box.querySelector(":scope > [id]");
+      const anchor = box.id ? box : box.querySelector(":scope > [id], :scope > ul > li[id], :scope > ol > li[id]");
       if (anchor) labels[anchor.id] = `${KINDS[type]} ${prefix ? prefix + "." : ""}${counters[key]}`;
     });
     return labels;
@@ -239,7 +240,8 @@
 
       // 본문 첫 문단의 id를 박스로 옮겨서 링크가 박스 맨 위로 가게 함
       if (!box.id) {
-        const anchor = box.querySelector(":scope > [id]");
+        // const anchor = box.querySelector(":scope > [id]");
+        const anchor = box.querySelector(":scope > [id], :scope > ul > li[id], :scope > ol > li[id]");
         if (anchor) {
           box.id = anchor.id;
           anchor.removeAttribute("id");
