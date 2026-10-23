@@ -167,7 +167,7 @@
       const key = keyOf(type);
       counters[key] = (counters[key] || 0) + 1;
       // const anchor = box.id ? box : box.querySelector(":scope > [id]");
-      const anchor = box.id ? box : box.querySelector(":scope > [id], :scope > ul > li[id], :scope > ol > li[id]");
+      const anchor = box.id ? box : box.querySelector(":scope > [id], :scope > :is(ul, ol) > li[id], :scope > :is(ul, ol) > li > p[id]");
       if (anchor) labels[anchor.id] = `${KINDS[type]} ${prefix ? prefix + "." : ""}${counters[key]}`;
     });
     return labels;
@@ -228,7 +228,7 @@
       const label = `${KINDS[type]} ${prefix ? prefix + "." : ""}${counters[key]}`;
 
       // 제목: "Theorem 1.2 (Yoneda)"
-      const title = box.querySelector(":scope > .admonition-title, :scope > summary");
+      const title = box.querySelector(":scope > [id], :scope > :is(ul, ol) > li[id], :scope > :is(ul, ol) > li > p[id]");
       if (title) {
         if (box.dataset.thmName === undefined) {
           const raw = title.textContent.trim();
