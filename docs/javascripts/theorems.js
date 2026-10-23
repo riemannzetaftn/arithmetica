@@ -250,6 +250,24 @@
       if (box.id) labels[box.id] = label;
     });
 
+        // 다른 페이지를 가리키는 빈 링크 채우기
+    const remote = [...root.querySelectorAll('a[href*="#"]')].filter(
+      (a) =>
+        a.origin === location.origin &&
+        a.pathname !== location.pathname &&
+        (a.dataset.thmRef || a.textContent.trim() === "")
+    );
+    await Promise.all(
+      remote.map(async (a) => {
+        const labels = await remoteLabels(a.href.split("#")[0]);
+        if (myRun !== runId) return;
+        const id = decodeURIComponent(a.hash.slice(1));
+        if (!(id in labels)) return;
+        a.textContent = labels[id];
+        a.dataset.thmRef = "1";
+      })
+    );
+
     // 같은 페이지 안의 빈 링크 [](#id) 채우기
     root.querySelectorAll('a[href*="#"]').forEach((a) => {
       if (a.pathname !== location.pathname) return;
