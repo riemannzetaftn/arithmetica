@@ -106,6 +106,7 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
         - Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebras with Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
+    { #ex-category }
 
 Note that in the most of the above examples, the objects are sets with additional structures, and morphisms are functions between the underlying sets preserving some structures (such categories are informally referred to as *concrete categories*). But this need not be the case, as in the examples of \(\hTop\) and \(\hTop_\ast\); as long as we can define the compositions in a way that satisfies the assumptions, the objects and morphisms can be anything. Let us illustrate this with more examples.
 
@@ -135,6 +136,7 @@ Note that in the most of the above examples, the objects are sets with additiona
                     \bullet & &\bullet \arrow[ll]\arrow[rr] & &\bullet, &\bullet \arrow[rr] & &\bullet & &\bullet \arrow[ll]
                 \end{tikzcd}
             ```
+    { #ex-elementary-categories }
 
 We now look at some elementary constructions on the categories.
 
@@ -148,6 +150,7 @@ We now look at some elementary constructions on the categories.
         and the composition being defined componentwisely. Of course, one can extend this construction to arbitrary family of categories, as long as the product of object classes exists as a class.
     3. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is ketp the same.
     4. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\varphi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\varphi:A\to B\) to \(\psi:A\to C\) is a morphism \(\phi:B\to C\) such that \(\psi = \phi\circ\varphi\). Its objects are also called the *objects of \(\sfC\) under \(A\)*.
+    { #def-1st-const-categories }
 
 !!! example "First Constructions on Categories"
 
@@ -171,6 +174,7 @@ We now look at some elementary constructions on the categories.
         - The category induced from product monoid \(M_1\times M_2\) is the product category of two categories induced from monoids \(M_1, M_2\).
     3. The under category is opposite of over category: precisely, we have \(A/\sfC = (\sfC^\op/A)^\op\).
     4. \(\CAlg_R\) is the coslice category \(R/\CRing\).
+    { #ex-1st-const-categories }
 
 !!! remark "Grothendieck Universe"
 
@@ -187,3 +191,4 @@ We now look at some elementary constructions on the categories.
     So we fix a universe \(U\), and we remedy the above examples to only include small objects; i.e. small sets, posets, groups, rings, and so on, which is enough for our practical purpose. Then the resulting classes \(\Ob(\sfC)\) are all sets (which might be not small itself). **Accordingly, from now on, we shall require that the class of objects of any category to be a set.** If \(\Ob(\sfC)\) is itself small, and each \(\Hom_\sfC(A,B)\) is small, then we say that \(\sfC\) is a *small category*. Then we can build categories over small categories with no foundational problem.
 
     However, checking if some built-up category is indeed consists of sets, or if it is small, is tedious. For this reason, in this blog, we shall deliberately ignore these foundational issues. We shall construct as we wish, on the belief that we can reduce the size if necessary.
+    { #rmk-Grothendieck.universe }

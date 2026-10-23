@@ -41,10 +41,11 @@ A category is a structure where we relate objects by arrows between them. Why no
     - *full*, if it is surjective on morphisms.
     - *fully faithful*, if it is bijective on morphisms; i.e. it is both full and faithful.
     - *essentially surjective*, if any object \(B\) of \(\sfD\) is isomorphic to \(\caF(A)\) for some object \(A\) of \(\sfC\).
+    { #def-functor }
 
 As you can see, a functor is an arrow between categories: it consists of functions which preserve the structure of categories. Throughout this blog, unless otherwise specified, a functor will denote a covariant one.
 
 !!! example "Functor"
 
-    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\to\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful.
+    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\to\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful. The specific examples follow from [](<Section 1.md/#ex-1st-const-categories>).
     2. TBU

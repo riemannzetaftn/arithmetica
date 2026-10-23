@@ -133,26 +133,59 @@
     return counts;
   }
 
-  // 다른 페이지를 가져와서 개수 세기 (페이지당 한 번만)
-  const countCache = new Map();
-  function fetchCounts(url) {
-    if (!countCache.has(url)) {
+    // 다른 페이지를 가져와서 파싱 (페이지당 한 번만)
+  const docCache = new Map();
+  function fetchDoc(url) {
+    if (!docCache.has(url)) {
       const p = fetch(url)
         .then((r) => {
           if (!r.ok) throw new Error(`HTTP ${r.status}`);
           return r.text();
         })
-        .then((html) => {
-          const doc = new DOMParser().parseFromString(html, "text/html");
-          return countBoxes(doc.querySelector(".md-content") || doc.body);
-        })
+        .then((html) => new DOMParser().parseFromString(html, "text/html"))
         .catch((err) => {
-          console.warn("[theorems] 개수를 세지 못함:", url, err);
-          return {};
+          console.warn("[theorems] 페이지를 읽지 못함:", url, err);
+          return null;
         });
-      countCache.set(url, p);
+      docCache.set(url, p);
     }
-    return countCache.get(url);
+    return docCache.get(url);
+  }
+
+  // 다른 페이지의 환경 개수
+  function fetchCounts(url) {
+    return fetchDoc(url).then((doc) =>
+      doc ? countBoxes(doc.querySelector(".md-content") || doc.body) : {}
+    );
+  }
+
+  // root 안의 환경 라벨표 { id: "Definition 1.3" } (counters를 이어서 증가시킴)
+  function labelsOf(root, prefix, counters) {
+    const labels = {};
+    root.querySelectorAll(SELECTOR).forEach((box) => {
+      const type = typeOf(box);
+      const key = keyOf(type);
+      counters[key] = (counters[key] || 0) + 1;
+      const anchor = box.id ? box : box.querySelector(":scope > [id]");
+      if (anchor) labels[anchor.id] = `${KINDS[type]} ${prefix ? prefix + "." : ""}${counters[key]}`;
+    });
+    return labels;
+  }
+
+  // 다른 페이지의 라벨표 (페이지당 한 번만 계산)
+  const labelCache = new Map();
+  function remoteLabels(url) {
+    if (!labelCache.has(url)) {
+      labelCache.set(url, (async () => {
+        const doc = await fetchDoc(url);
+        if (!doc) return {};
+        const root = doc.querySelector(".md-content") || doc.body;
+        const loc = parseLocation(new URL(url).pathname);
+        const counters = await getStartCounts(loc);
+        return labelsOf(root, getPrefix(root, loc), counters);
+      })());
+    }
+    return labelCache.get(url);
   }
 
   // 사이드바에서 같은 챕터의 이전 페이지 URL 목록 (섹션 번호순)
