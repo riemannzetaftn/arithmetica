@@ -34,6 +34,12 @@ def read_weight(md: Path) -> float:
             return float(m.group(1))
     return NO_WEIGHT
 
+LABEL = re.compile(r"^(chapter|section)\s+\d+(?:\.\d+)*$", re.I)
+
+def nav_entry(md: Path, rel: str):
+    """Chapter n / Section n 이름이면 {라벨: 경로}, 아니면 경로 그대로."""
+    name = md.parent.name if is_index(md) else md.stem
+    return {name: rel} if LABEL.match(name) else rel
 
 def is_index(path: Path) -> bool:
     return path.name.lower() in ("index.md", "readme.md")
@@ -54,9 +60,10 @@ def collect(directory: Path):
         elif child.suffix.lower() == ".md":
             rel = child.relative_to(DOCS).as_posix()
             if is_index(child):
-                index_rel, index_weight = rel, read_weight(child)
+                #index_rel, index_weight = rel, read_weight(child)
+                index_rel, index_weight = nav_entry(child, rel), read_weight(child)
             else:
-                items.append((read_weight(child), child.name.lower(), rel))
+                items.append((read_weight(child), child.name.lower(), nav_entry(child, rel)))
 
     items.sort(key=lambda t: (t[0], t[1]))
     entries = [entry for _, _, entry in items]
@@ -77,6 +84,9 @@ def render(entries, depth=1):
             lines.append(f"{pad}{q(entry)},")
         else:
             (name, sub), = entry.items()
+            if isinstance(sub, str):
+                lines.append(f"{pad}{{ {q(name)} = {q(sub)} }},")
+                continue
             lines.append(f"{pad}{{ {q(name)} = [")
             lines.extend(render(sub, depth + 1))
             lines.append(f"{pad}] }},")
